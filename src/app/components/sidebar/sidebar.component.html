@@ -1,0 +1,24 @@
+<div class="h-full p-3 border-r-[1px] border-sky-50 bg-blackcolor">
+    <div class="flex justify-between mb-4">
+        <button class="text-3xl">NextFlop</button>
+        <div></div>
+        <button>x</button>
+    </div>
+    <ul class="mb-4">
+        <li *ngFor="let data of mergedData" class="mb-4">
+            <div class="py-2 text-xs font-thin uppercase text-small">{{data.title}}</div>
+            <ul>
+                <li *ngFor="let item of data.data" class="p-2 text-sm">
+                    <a [routerLink]="item.routerLink" class="flex items-center gap-3 hover:text-primary">
+                        <mat-icon>{{item.icon}}</mat-icon>
+                        <span>{{item.label}}</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <div class="relative">
+        <img src="../../../assets/images/trucavt.jpg" alt="" class="w-10 h-10 rounded-full">
+        <div class="absolute w-2 h-2 bg-red-500 rounded-full top-8 left-7"></div>
+    </div>
+</div>
