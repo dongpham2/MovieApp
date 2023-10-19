@@ -1,24 +1,55 @@
-<div class="h-full p-3 border-r-[1px] border-sky-50 bg-blackcolor">
-    <div class="flex justify-between mb-4">
-        <button class="text-3xl">NextFlop</button>
-        <div></div>
-        <button>x</button>
-    </div>
-    <ul class="mb-4">
-        <li *ngFor="let data of mergedData" class="mb-4">
-            <div class="py-2 text-xs font-thin uppercase text-small">{{data.title}}</div>
-            <ul>
-                <li *ngFor="let item of data.data" class="p-2 text-sm">
-                    <a [routerLink]="item.routerLink" class="flex items-center gap-3 hover:text-primary">
-                        <mat-icon>{{item.icon}}</mat-icon>
-                        <span>{{item.label}}</span>
-                    </a>
-                </li>
-            </ul>
+<div
+  [ngClass]="
+    collapsed
+      ? 'h-full w-[100%] p-3 border-r-[1px] border-sky-50 bg-blackcolor '
+      : 'w-[100%] bg-blackcolor h-full p-3 border-r-[1px] border-sky-50'
+  "
+>
+  <div class="flex justify-between mb-4">
+    <button class="text-3xl" *ngIf="!collapsed" (click)="toggleCollapse()">
+      N
+    </button>
+    <a href="/home">
+      <button class="text-3xl" *ngIf="collapsed" (click)="toggleCollapse()">
+        N
+      </button>
+      <button class="text-3xl" *ngIf="collapsed">extFlop</button>
+    </a>
+    <div></div>
+    <button class="text-xl ml-7" *ngIf="collapsed" (click)="closeSideNav()">
+      x
+    </button>
+  </div>
+  <ul class="mb-4">
+    <li *ngFor="let data of mergedData" class="mb-6">
+      <div
+        *ngIf="collapsed"
+        class="py-2 text-xs font-thin uppercase text-small"
+      >
+        {{ data.title }}
+      </div>
+      <ul>
+        <li *ngFor="let item of data.data" class="p-1 text-sm">
+          <a
+            (click)="navigateToRoute(item.routerLink)"
+            class="flex items-center gap-5 p-[5px] cursor-pointer hover:text-primary"
+            [routerLink]="[item.routerLink]"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+          >
+            <mat-icon>{{ item.icon }}</mat-icon>
+            <span *ngIf="collapsed">{{ item.label }}</span>
+          </a>
         </li>
-    </ul>
-    <div class="relative">
-        <img src="../../../assets/images/trucavt.jpg" alt="" class="w-10 h-10 rounded-full">
-        <div class="absolute w-2 h-2 bg-red-500 rounded-full top-8 left-7"></div>
-    </div>
+      </ul>
+    </li>
+  </ul>
+  <div class="relative">
+    <img
+      src="../../../assets/images/trucavt.jpg"
+      alt=""
+      class="w-10 h-10 rounded-full"
+    />
+    <div class="absolute w-2 h-2 bg-red-500 rounded-full top-8 left-7"></div>
+  </div>
 </div>

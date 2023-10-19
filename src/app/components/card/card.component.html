@@ -1,19 +1,30 @@
-<div class="p-2 " >
-    <div class="relative mb-4">
-        <img [src]="data.banner" alt="" class="max-w-[230px] w-full h-[200px] object-cover rounded-xl">
-        <button class="hover:opacity-90 absolute w-7 h-7 text-white bg-[#ccc] rounded-md right-3 top-3 text-sm">+</button>
-    </div>
-    <div class="text-[15px] mb-4">{{data.title}}</div>
-    <div class="flex items-center justify-between mb-5">
-        <span>{{data.publish}}</span>
-        <div class="flex items-center justify-center gap-2">
-            <span class="text-[12px]">{{data.review}}</span>
-            <span class="text-yellow-300 ">
-                <mat-icon >star_border</mat-icon>
-            </span>
-        </div>
-    </div>
-    <button class="flex items-center justify-center w-full gap-1 px-3 py-2 text-lg font-medium rounded-lg hover:opacity-90 bg-primary">Watch now
-        <span><mat-icon class="mt-[7px]">play_circle_outline</mat-icon></span>
+<div class="p-2">
+  <div class="relative mb-4">
+    <img
+      [src]="data.banner"
+      alt=""
+      class="w-full h-[200px] object-cover rounded-xl"
+    />
+    <button
+      class="hover:opacity-90 absolute w-7 h-7 text-white bg-[#ccc] rounded-md right-3 top-3 text-sm"
+    >
+      +
     </button>
+  </div>
+  <div class="text-[15px] mb-4">{{ data.title }}</div>
+  <div class="flex items-center justify-between mb-5">
+    <span>{{ data.publish }}</span>
+    <div class="flex items-center justify-center gap-2">
+      <span class="text-[12px]">{{ data.review }}</span>
+      <span class="text-yellow-300">
+        <mat-icon>star_border</mat-icon>
+      </span>
+    </div>
+  </div>
+  <button
+    class="flex items-center justify-center w-full gap-1 px-3 py-2 text-lg font-medium rounded-lg hover:opacity-90 bg-primary"
+  >
+    Watch now
+    <span><mat-icon class="mt-[7px]">play_circle_outline</mat-icon></span>
+  </button>
 </div>

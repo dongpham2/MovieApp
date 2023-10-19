@@ -1,38 +1,54 @@
-<header class="flex items-center justify-start py-10 text-white cursor-pointer header gap-x-5">
-    <li *ngFor="let router of routeData" class="mb-4 list-none">
-        <ul class="list-none">
-            <a [routerLink]="router.routerLink" class="flex items-center gap-3 hover:text-primary">
-                <span>{{router.label}}</span>
-            </a>
-        </ul>
-    </li>
+<header
+  class="flex items-center justify-start py-10 text-white cursor-pointer header gap-x-5"
+>
+  <li *ngFor="let router of routeData" class="mb-4 list-none">
+    <ul class="list-none">
+      <a
+        [routerLink]="[router.routerLink]"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="flex items-center gap-3 hover:text-primary"
+      >
+        <span>{{ router.label }}</span>
+      </a>
+    </ul>
+  </li>
 </header>
-<section class="banner h-[400px] page-container mb-10" >
+<section class="banner h-[400px] page-container mb-10">
   <div class="relative w-full h-full bg-white rounded-lg">
-    <div class="absolute inset-0 overlay bg-gradient-to-t from-[rgba(0,0,0,0.5)] to-[rgba(0,0,0,0.5)] rounded-lg"></div>
-    <img src="https://bazaarvietnam.vn/wp-content/uploads/2023/08/harper-bazaar-ten-cac-sieu-anh-hung-trong-marvel-22-e1691312027348.jpeg" alt="" class="object-cover w-full h-full rounded-lg">
+    <div
+      class="absolute inset-0 overlay bg-gradient-to-t from-[rgba(0,0,0,0.5)] to-[rgba(0,0,0,0.5)] rounded-lg"
+    ></div>
+    <img
+      src="https://bazaarvietnam.vn/wp-content/uploads/2023/08/harper-bazaar-ten-cac-sieu-anh-hung-trong-marvel-22-e1691312027348.jpeg"
+      alt=""
+      class="object-cover w-full h-full rounded-lg"
+    />
     <div class="absolute bottom-0 w-full p-6 text-white left-5">
-    <h2 class="mb-5 text-3xl font-bold ">Avengers: Endgame</h2>
-    <div class="flex items-center mb-5 gap-x-3">
+      <h2 class="mb-5 text-3xl font-bold">Avengers: Endgame</h2>
+      <div class="flex items-center mb-5 gap-x-3">
         <div class="px-4 py-2 border border-white rounded-md">Action</div>
         <div class="px-4 py-2 border border-white rounded-md">Adventure</div>
         <div class="px-4 py-2 border border-white rounded-md">Drama</div>
-    </div>
-    <div class="flex gap-3">
-        <button class="flex items-center justify-center gap-2 px-6 py-3 font-medium text-white rounded-lg bg-primary">Watch Now
-            <span>
-                <mat-icon>play_circle_outline</mat-icon>
-            </span>
+      </div>
+      <div class="flex gap-3">
+        <button
+          class="flex items-center justify-center gap-2 px-6 py-3 font-medium text-white rounded-lg bg-primary"
+        >
+          Watch Now
+          <span>
+            <mat-icon>play_circle_outline</mat-icon>
+          </span>
         </button>
         <button class="px-6 py-3 bg-[#676467] opacity-75 rounded-lg">
-            <span class="text-2xl">+</span>
+          <span class="text-2xl">+</span>
         </button>
-    </div>
+      </div>
     </div>
   </div>
 </section>
 <section class="movies-layout">
-  <h2 class="mb-5 text-2xl font-bold text-white capitalize" >Now Playing</h2>
+  <h2 class="mb-5 text-2xl font-bold text-white capitalize">Now Playing</h2>
   <div class="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2">
     <app-card *ngFor="let data of fakeData" [data]="data"></app-card>
   </div>

@@ -1,0 +1,22 @@
+<div class="mb-2 bg-[#242424] flex shadow-sm rounded-lg items-center gap-3 p-3">
+  <img
+    class="cursor-pointer w-[120px] rounded-lg h-[130px]"
+    [src]="dataMovies.thumbnail"
+    alt=""
+  />
+  <div class="flex flex-col flex-1 gqap-2">
+    <span class="font-semibold">{{ dataMovies.title }}</span>
+    <div class="flex justify-between">
+      <span>{{ dataMovies.year }}</span>
+      <div class="flex items-center">
+        <span> 6.8 </span>
+        <mat-icon class="text-yellow-500">star</mat-icon>
+      </div>
+    </div>
+    <div class="flex items-center gap-2">
+      <div class="p-1 bg-transparent border-[1px] rounded-lg">
+        {{ dataMovies.genres }}
+      </div>
+    </div>
+  </div>
+</div>

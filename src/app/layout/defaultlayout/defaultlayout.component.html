@@ -1,12 +1,14 @@
 <div class="flex h-full text-white">
-    <div class="w-[15%]">
-        <app-sidebar></app-sidebar>
-    </div>
-    <div class="flex-1 h-full px-3 overflow-hidden overflow-y-scroll bg-contentcolor">
-        <!-- <app-header></app-header> -->
-        <router-outlet></router-outlet>
-    </div>
-    <div class="w-[20%] h-full">
-        <app-rightbar></app-rightbar>
-    </div>
+  <!-- <div class="w-[15%]"> -->
+  <app-sidebar></app-sidebar>
+  <!-- </div> -->
+  <div
+    class="flex-1 h-full px-3 overflow-hidden overflow-y-scroll bg-contentcolor w-[75%]"
+  >
+    <!-- <app-header></app-header> -->
+    <router-outlet></router-outlet>
+  </div>
+  <div class="overflow-hidden overflow-y-scroll w-[27%] h-full bg-[#181818]">
+    <app-rightbar></app-rightbar>
+  </div>
 </div>

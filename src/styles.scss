@@ -3,22 +3,28 @@
 @tailwind utilities;
 
 @layer base {
-    body {
-        @apply bg-slate-900 font-body;
-    }
-    
+  body {
+    @apply font-body;
+    padding: 0;
+    margin: 0;
+  }
 }
-
 @layer components {
-    .page-container {
-        max-width: 1280px;
-        margin: 0 auto;
-    }
+  .page-container {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
 }
 
 * {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
 }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}

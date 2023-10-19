@@ -4,3 +4,10 @@ export interface dataMoviesType {
     publish: number;
     review: number;
 }
+
+export interface dataMoviesSearch {
+    title: string;
+    year: number;
+    genres: object;
+    thumbnail: string;
+}

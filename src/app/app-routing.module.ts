@@ -4,6 +4,11 @@ import { DefaultlayoutComponent } from './layout/defaultlayout/defaultlayout.com
 import { HomepageComponent } from './pages/homepage/homepage.component';
 import { SigninComponent } from './pages/signin/signin.component';
 import { AuthenticationlayoutComponent } from './layout/authenticationlayout/authenticationlayout.component';
+import { CommunityComponent } from './pages/community/community.component';
+import { RecentComponent } from './pages/recent/recent.component';
+import { SettingsComponent } from './pages/settings/settings.component';
+import { AnimeComponent } from './pages/anime/anime.component';
+import { TvseriesComponent } from './pages/tvseries/tvseries.component';
 
 const routes: Routes = [
   {
@@ -11,9 +16,32 @@ const routes: Routes = [
     component: DefaultlayoutComponent,
     children: [
       {
-        path: '',
-        component: HomepageComponent
-      }
+        path: 'home',
+        component: HomepageComponent,
+        children: [
+          {
+            path: 'anime',
+            component: AnimeComponent
+          },
+          {
+            path: 'tvseries',
+            component: TvseriesComponent
+          }
+        ]
+      },
+      {
+        path: 'community',
+        component: CommunityComponent
+      },
+      {
+        path: 'recent',
+        component: RecentComponent
+      },
+      {
+        path: 'settings',
+        component: SettingsComponent
+      },
+      
     ]
   },
   {

@@ -18,7 +18,12 @@ import { AnimeComponent } from './pages/anime/anime.component';
 import { DefaultlayoutComponent } from './layout/defaultlayout/defaultlayout.component';
 import { SigninComponent } from './pages/signin/signin.component';
 import { AuthenticationlayoutComponent } from './layout/authenticationlayout/authenticationlayout.component';
-
+import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { CommunityComponent } from './pages/community/community.component';
+import { RecentComponent } from './pages/recent/recent.component';
+import { SettingsComponent } from './pages/settings/settings.component';
+import { HttpClientModule } from '@angular/common/http';
+import { SearchCardComponent } from './components/search-card/search-card.component';
 
 
 @NgModule({
@@ -36,12 +41,19 @@ import { AuthenticationlayoutComponent } from './layout/authenticationlayout/aut
     DefaultlayoutComponent,
     SigninComponent,
     AuthenticationlayoutComponent,
+    CommunityComponent,
+    RecentComponent,
+    SettingsComponent,
+    SearchCardComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MatIconModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ReactiveFormsModule,
+    HttpClientModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

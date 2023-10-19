@@ -61,7 +61,7 @@ export const mergedData = [
                 label: "Settings"
             },
             {
-                routerLink: "logout",
+                routerLink: "auth/signin",
                 icon: "settings_backup_restore",
                 label: "Log out"
             }
