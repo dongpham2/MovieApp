@@ -16,7 +16,13 @@ const routes: Routes = [
     component: DefaultlayoutComponent,
     children: [
       {
+        path: '',
+        pathMatch:"full",
+        component: HomepageComponent,
+      },
+      {
         path: 'home',
+        pathMatch:"full",
         component: HomepageComponent,
         children: [
           {

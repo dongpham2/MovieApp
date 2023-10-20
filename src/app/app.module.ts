@@ -24,7 +24,7 @@ import { RecentComponent } from './pages/recent/recent.component';
 import { SettingsComponent } from './pages/settings/settings.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SearchCardComponent } from './components/search-card/search-card.component';
-
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -52,7 +52,8 @@ import { SearchCardComponent } from './components/search-card/search-card.compon
     MatIconModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
 
   ],
   providers: [],

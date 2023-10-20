@@ -1,5 +1,4 @@
-import { Component } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
 import { MoviesService } from 'src/app/services/movies.service';
 
 @Component({
@@ -7,25 +6,38 @@ import { MoviesService } from 'src/app/services/movies.service';
   templateUrl: './rightbar.component.html',
   styleUrls: ['./rightbar.component.scss']
 })
-export class RightbarComponent {
-  data:any=[]
-  searchValue = ''
-  searchForm = this.fb.group({
-    searchValue: ''
-  })
-  constructor(private movie:MoviesService, private fb: FormBuilder) {
-    this.movie.getData().subscribe(data=>{
-      console.log("dataaaa",data)
-      this.data = data
-    })
+export class RightbarComponent implements OnInit {
+  movies: any = [];
+  filteredMovies: any = [];
+  searchValue: string = '';
+
+  constructor(private mv: MoviesService) {}
+
+  ngOnInit(): void {
+    this.mv.getData().subscribe((res) => {
+      console.log("🚀 ~ file: rightbar.component.ts:24 ~ RightbarComponent ~ this.mv.getData ~ res:", res);
+      this.movies = res;
+      this.filteredMovies = res;
+    });
   }
-  // fetchData() : void {
-  //   this.MoviesService.getData(this.searchValue).subscribe((movie) => {
-  //     this.movie = movie
-  //   })
-  // }
 
   onSearchSubmit(): void {
-    this.searchValue = this.searchForm.value.searchValue ?? ''
+    this.Search();
+  }
+
+  Search() {
+    if (this.searchValue === "") {
+      this.filteredMovies = this.movies;
+    } else {
+      this.filteredMovies = this.movies.filter((movie: any) => {
+        const title = movie.title?.toLowerCase(); // Check if title exists before accessing toLowerCase()
+        const genre = movie.genre?.toLowerCase(); // Check if genre exists before accessing toLowerCase()
+
+        return (
+          title && title.includes(this.searchValue.toLowerCase()) ||
+          genre && genre.includes(this.searchValue.toLowerCase())
+        );
+      });
+    }
   }
 }
