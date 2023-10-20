@@ -9,6 +9,7 @@ import { RecentComponent } from './pages/recent/recent.component';
 import { SettingsComponent } from './pages/settings/settings.component';
 import { AnimeComponent } from './pages/anime/anime.component';
 import { TvseriesComponent } from './pages/tvseries/tvseries.component';
+import { SignupComponent } from './pages/signup/signup.component';
 
 const routes: Routes = [
   {
@@ -18,11 +19,11 @@ const routes: Routes = [
       {
         path: '',
         pathMatch:"full",
-        component: HomepageComponent,
+        redirectTo: "home",
+        // component: HomepageComponent,
       },
       {
         path: 'home',
-        pathMatch:"full",
         component: HomepageComponent,
         children: [
           {
@@ -57,6 +58,10 @@ const routes: Routes = [
       {
         path: 'signin',
         component: SigninComponent
+      },
+      {
+        path: 'signup',
+        component: SignupComponent
       }
     ]
   }

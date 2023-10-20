@@ -25,6 +25,8 @@ import { SettingsComponent } from './pages/settings/settings.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SearchCardComponent } from './components/search-card/search-card.component';
 import { FormsModule } from '@angular/forms';
+import { LoadingComponent } from './components/loading/loading.component';
+import { SignupComponent } from './pages/signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +46,9 @@ import { FormsModule } from '@angular/forms';
     CommunityComponent,
     RecentComponent,
     SettingsComponent,
-    SearchCardComponent
+    SearchCardComponent,
+    LoadingComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { tap } from 'rxjs';
 import { MoviesService } from 'src/app/services/movies.service';
 
 @Component({
@@ -10,11 +11,18 @@ export class RightbarComponent implements OnInit {
   movies: any = [];
   filteredMovies: any = [];
   searchValue: string = '';
-
+  loading: boolean = false;
   constructor(private mv: MoviesService) {}
 
   ngOnInit(): void {
-    this.mv.getData().subscribe((res) => {
+    this.loading = true;
+    this.mv.getData()
+    .pipe(
+      tap(() => {
+        this.loading = false; // Kết thúc tiến trình loading
+      })
+    )
+    .subscribe((res) => {
       console.log("🚀 ~ file: rightbar.component.ts:24 ~ RightbarComponent ~ this.mv.getData ~ res:", res);
       this.movies = res;
       this.filteredMovies = res;

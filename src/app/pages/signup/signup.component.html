@@ -2,8 +2,8 @@
   <div
     class="flex flex-col items-center p-4 text-black bg-white rounded-lg formSignin"
   >
-    <span class="text-2xl font-semibold">Sign In</span>
-    <p>How to i get started lorem ipsum dolor at?</p>
+    <span class="text-2xl font-semibold">Sign Up</span>
+    <p class="text-base font-medium">Sign up an account to join with us?</p>
     <form
       [formGroup]="applyForm"
       (ngSubmit)="submitData($event)"
@@ -49,10 +49,41 @@
           }}</mat-icon>
         </span>
       </div>
+      <div class="relative form-group">
+        <label for="password" class="form-name">Confirm Password</label>
+        <input
+          id="password"
+          placeholder="Password..."
+          [attr.type]="hidePassword ? 'password' : 'text'"
+          formControlName="password"
+          class="form-input pr-11 p-3 rounded-xl border-[1px] border-slate-500"
+        />
+        <p
+          *ngIf="
+            confirmPassword &&
+            confirmPassword.invalid &&
+            confirmPassword.touched &&
+            confirmPassword == password
+          "
+          class="text-red-500"
+        >
+          Password must have value and more than 6 characters
+        </p>
+
+        <!-- <mat-icon>visibility</mat-icon> -->
+        <span
+          class="absolute top-10 right-3"
+          (click)="toggleConfirmPasswordVisibility()"
+        >
+          <mat-icon>{{
+            hideConfirmPassword ? "visibility_off" : "visibility"
+          }}</mat-icon>
+        </span>
+      </div>
       <a
-        href="/auth/signup"
-        class="flex justify-end text-base text-black font-extrabold"
-        >Don't have an account?</a
+        href="/auth/signin"
+        class="flex justify-end text-base text-green-700 underline font-medium"
+        >Already have an account</a
       >
       <button
         type="submit"
