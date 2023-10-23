@@ -11,3 +11,7 @@ export interface dataMoviesSearch {
     genres: object;
     thumbnail: string;
 }
+
+export interface slideInterface {
+  img : string;
+}

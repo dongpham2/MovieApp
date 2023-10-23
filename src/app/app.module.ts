@@ -27,6 +27,7 @@ import { SearchCardComponent } from './components/search-card/search-card.compon
 import { FormsModule } from '@angular/forms';
 import { LoadingComponent } from './components/loading/loading.component';
 import { SignupComponent } from './pages/signup/signup.component';
+import { CarouselComponent } from './components/carousel/carousel.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { SignupComponent } from './pages/signup/signup.component';
     SettingsComponent,
     SearchCardComponent,
     LoadingComponent,
-    SignupComponent
+    SignupComponent,
+    CarouselComponent
   ],
   imports: [
     BrowserModule,
