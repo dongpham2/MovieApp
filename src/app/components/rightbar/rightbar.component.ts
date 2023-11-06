@@ -15,11 +15,11 @@ export class RightbarComponent implements OnInit {
   constructor(private mv: MoviesService) {}
 
   ngOnInit(): void {
-    this.loading = true;
+    // this.loading = true;
     this.mv.getData()
     .pipe(
       tap(() => {
-        this.loading = false; // Kết thúc tiến trình loading
+        // this.loading = false; // Kết thúc tiến trình loading
       })
     )
     .subscribe((res) => {

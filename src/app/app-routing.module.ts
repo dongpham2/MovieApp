@@ -10,6 +10,9 @@ import { SettingsComponent } from './pages/settings/settings.component';
 import { AnimeComponent } from './pages/anime/anime.component';
 import { TvseriesComponent } from './pages/tvseries/tvseries.component';
 import { SignupComponent } from './pages/signup/signup.component';
+import { DiscoverComponent } from './pages/discover/discover.component';
+import { AwardsComponent } from './pages/awards/awards.component';
+import { CelebComponent } from './pages/celeb/celeb.component';
 
 const routes: Routes = [
   {
@@ -43,6 +46,18 @@ const routes: Routes = [
       {
         path: 'recent',
         component: RecentComponent
+      },
+      {
+        path: 'discover',
+        component: DiscoverComponent
+      },
+      {
+        path: 'awards',
+        component: AwardsComponent
+      },
+      {
+        path: 'celeb',
+        component: CelebComponent
       },
       {
         path: 'settings',

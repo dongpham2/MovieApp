@@ -28,6 +28,9 @@ import { FormsModule } from '@angular/forms';
 import { LoadingComponent } from './components/loading/loading.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
+import { DiscoverComponent } from './pages/discover/discover.component';
+import { AwardsComponent } from './pages/awards/awards.component';
+import { CelebComponent } from './pages/celeb/celeb.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +53,10 @@ import { CarouselComponent } from './components/carousel/carousel.component';
     SearchCardComponent,
     LoadingComponent,
     SignupComponent,
-    CarouselComponent
+    CarouselComponent,
+    DiscoverComponent,
+    AwardsComponent,
+    CelebComponent
   ],
   imports: [
     BrowserModule,
